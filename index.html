@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N3PAY - HAM Radio & Programming</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .page-indicator {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .content-page {
+            display: none;
+        }
+        .content-page.active {
+            display: block;
+        }
+        .jumbotron {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#" onclick="showHome()">N3PAY</a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                HAM Radio Topics
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="showPage('vhf-uhf')">VHF/UHF</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showPage('hf')">HF</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showPage('digital-modes')">Digital Modes</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showPage('digital-radio')">Digital Radio</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showPage('sdr')">SDR</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showPage('ham-adjacent')">HAM Adjacent Radio Things</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showPage('other-websites')">Other Websites</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <!-- Page Indicator -->
+            <div id="page-indicator" class="page-indicator">
+                Home
+            </div>
+
+            <!-- Home Page -->
+            <div id="home-page" class="content-page active">
+                <div class="jumbotron text-center">
+                    <h1 class="display-4">Welcome to N3PAY</h1>
+                    <p class="lead">Started HAM radio hobby in January 2024. Started computer programming hobby in the summer of 1978. Let's talk!</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">About This Site</h5>
+                                <p class="card-text">
+                                    Welcome to my personal website where I share my journey in HAM radio and programming. 
+                                    Use the navigation menu above to explore different aspects of amateur radio and related topics.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VHF/UHF Page -->
+            <div id="vhf-uhf-page" class="content-page">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2>VHF/UHF Radio</h2>
+                        <p>Very High Frequency (VHF) and Ultra High Frequency (UHF) bands for amateur radio.</p>
+                        
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">2 meter band (144-148 MHz) - Most popular VHF band</li>
+                            <li class="list-group-item">70 centimeter band (420-450 MHz) - Primary UHF band</li>
+                            <li class="list-group-item">Local repeaters and simplex frequencies</li>
+                            <li class="list-group-item">FM voice communications and digital modes</li>
+                            <li class="list-group-item">Emergency communications and ARES/RACES</li>
+                            <li class="list-group-item">Handheld transceivers (HTs) and mobile radios</li>
+                            <li class="list-group-item">Antenna considerations for VHF/UHF</li>
+                            <li class="list-group-item">Line of sight propagation characteristics</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HF Page -->
+            <div id="hf-page" class="content-page">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2>HF Radio</h2>
+                        <p>High Frequency (HF) bands enable worldwide communications through ionospheric propagation.</p>
+                        
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">80/75 meters (3.5-4.0 MHz) - Regional and DX communications</li>
+                            <li class="list-group-item">40 meters (7.0-7.3 MHz) - Reliable DX band day and night</li>
+                            <li class="list-group-item">20 meters (14.0-14.35 MHz) - Premier DX band</li>
+                            <li class="list-group-item">15 meters (21.0-21.45 MHz) - Excellent for DX during solar maximum</li>
+                            <li class="list-group-item">10 meters (28.0-29.7 MHz) - Skip propagation and local FM</li>
+                            <li class="list-group-item">Ionospheric propagation and solar cycle effects</li>
+                            <li class="list-group-item">HF antenna systems - dipoles, beams, and verticals</li>
+                            <li class="list-group-item">Contest operation and DXpeditions</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Modes Page -->
+            <div id="digital-modes-page" class="content-page">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2>Digital Modes</h2>
+                        <p>Computer-based digital communication modes for amateur radio.</p>
+                        
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">FT8 - Popular weak signal mode for HF and VHF</li>
+                            <li class="list-group-item">FT4 - Fast mode for contests and QSOs</li>
+                            <li class="list-group-item">PSK31 - Phase shift keying for keyboard-to-keyboard</li>
+                            <li class="list-group-item">RTTY - Radio teletype for contests and ragchews</li>
+                            <li class="list-group-item">JT65 - Weak signal mode for VHF and microwave</li>
+                            <li class="list-group-item">WSPR - Weak Signal Propagation Reporter</li>
+                            <li class="list-group-item">VARA and Winlink for emergency communications</li>
+                            <li class="list-group-item">Software setup - WSJT-X, fldigi, and sound card interfaces</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Radio Page -->
+            <div id="digital-radio-page" class="content-page">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2>Digital Radio</h2>
+                        <p>Digital voice and data radio systems in amateur radio.</p>
+                        
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">DMR - Digital Mobile Radio with talk groups</li>
+                            <li class="list-group-item">System Fusion (YSF) - Yaesu's digital mode</li>
+                            <li class="list-group-item">D-STAR - Digital Smart Technologies for Amateur Radio</li>
+                            <li class="list-group-item">P25 - Professional digital radio standard</li>
+                            <li class="list-group-item">NXDN - Narrow band digital system</li>
+                            <li class="list-group-item">Hotspots and digital repeaters</li>
+                            <li class="list-group-item">Codeplug programming for digital radios</li>
+                            <li class="list-group-item">Internet linking and reflector systems</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SDR Page -->
+            <div id="sdr-page" class="content-page">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2>Software Defined Radio (SDR)</h2>
+                        <p>Software-based radio systems that process signals digitally.</p>
+                        
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">RTL-SDR dongles - Inexpensive entry point to SDR</li>
+                            <li class="list-group-item">HackRF One - Half-duplex transceiver SDR</li>
+                            <li class="list-group-item">USRP devices - Universal Software Radio Peripheral</li>
+                            <li class="list-group-item">FlexRadio systems - Commercial SDR transceivers</li>
+                            <li class="list-group-item">GNU Radio - Open source SDR framework</li>
+                            <li class="list-group-item">SDR Console, HDSDR, and CubicSDR software</li>
+                            <li class="list-group-item">Signal processing and DSP concepts</li>
+                            <li class="list-group-item">Remote operation and WebSDR systems</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HAM Adjacent Page -->
+            <div id="ham-adjacent-page" class="content-page">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2>HAM Adjacent Radio Things</h2>
+                        <p>Radio-related topics and technologies connected to amateur radio.</p>
+                        
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">Scanner and monitoring activities</li>
+                            <li class="list-group-item">GMRS - General Mobile Radio Service</li>
+                            <li class="list-group-item">FRS - Family Radio Service walkie-talkies</li>
+                            <li class="list-group-item">Maritime and aviation radio monitoring</li>
+                            <li class="list-group-item">Shortwave listening (SWLing) and broadcast DX</li>
+                            <li class="list-group-item">Microwave and millimeter wave experimentation</li>
+                            <li class="list-group-item">RF safety and exposure calculations</li>
+                            <li class="list-group-item">Test equipment - analyzers, meters, and scopes</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Websites Page -->
+            <div id="other-websites-page" class="content-page">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2>Other Websites</h2>
+                        <p>Useful websites and resources for amateur radio operators.</p>
+                        
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">ARRL.org - American Radio Relay League</li>
+                            <li class="list-group-item">QRZ.com - Ham radio callsign database and community</li>
+                            <li class="list-group-item">eQSL.cc and LoTW - Electronic QSL systems</li>
+                            <li class="list-group-item">PSKReporter.info - Digital mode propagation maps</li>
+                            <li class="list-group-item">DXSummit.fi - DX cluster and spotting</li>
+                            <li class="list-group-item">RadioReference.com - Scanner database and frequencies</li>
+                            <li class="list-group-item">WSPR.net - Weak Signal Propagation Reporter network</li>
+                            <li class="list-group-item">Contest calendar and logging software sites</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Page navigation functions
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.content-page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Update page indicator
+            const indicator = document.getElementById('page-indicator');
+            const pageNames = {
+                'vhf-uhf': 'VHF/UHF',
+                'hf': 'HF',
+                'digital-modes': 'Digital Modes',
+                'digital-radio': 'Digital Radio',
+                'sdr': 'SDR',
+                'ham-adjacent': 'HAM Adjacent Radio Things',
+                'other-websites': 'Other Websites'
+            };
+            indicator.textContent = pageNames[pageId] || 'Home';
+        }
+        
+        function showHome() {
+            // Hide all pages
+            const pages = document.querySelectorAll('.content-page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show home page
+            document.getElementById('home-page').classList.add('active');
+            
+            // Update page indicator
+            document.getElementById('page-indicator').textContent = 'Home';
+        }
+    </script>
+</body>
+</html>
